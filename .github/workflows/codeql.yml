@@ -100,3 +100,15 @@ jobs:
       uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
+
+    - name: 'Upload javascript Artifact'
+      uses: actions/upload-artifact@v4
+      with:
+         name: dify-javascript-Artifact
+         path: /home/runner/work/_temp/codeql_databases/javascript.zip
+
+    - name: 'Upload python Artifact'
+      uses: actions/upload-artifact@v4
+      with:
+         name: dify-python-Artifact
+         path: /home/runner/work/_temp/codeql_databases/python.zip
